@@ -1,0 +1,8 @@
+num of plans	7
+kb	1	play		d
+bk	1	導引養生功		d
+bk	2	日本のソブリンリスク		d
+bk	3	relativity-3		d1
+kb	2	admin	listing	d2
+kb	3	admin	musescore write-out	d3
+currency	1	python		d4
