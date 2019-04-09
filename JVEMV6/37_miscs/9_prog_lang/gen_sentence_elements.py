@@ -103,6 +103,7 @@ def test_1():
         step : 0.1
             prep : vars
     ###################'''
+
     numOf_Nouns_Chosen = 4
     numOf_Verbs_Chosen = 4
     numOf_Expressions_Chosen = 4
@@ -195,6 +196,7 @@ def test_1():
     fin_Verbs.close()
     fin_Expressions.close()
     
+
 #     #debug
 #     print()
 #     print("[%s:%d] lo_Nouns ==>" % \
@@ -217,6 +219,7 @@ def test_1():
     for i in range(0, numOf_Nouns_Chosen):
     
         # choose
+
         noun_Chosen = lo_Nouns[random.randint(0, lenOf_LO_Nouns - 1)]
 #         noun_Chosen = lo_Nouns[random.randint(0, lenOf_LO_Nouns)]
         
@@ -224,6 +227,7 @@ def test_1():
         lo_Nouns_Chosen.append(noun_Chosen)
         
     #/for i in range(0, numOf_Nouns_Chosen):
+
 
 #     #debug
 #     print()
@@ -243,6 +247,7 @@ def test_1():
     for i in range(0, numOf_Verbs_Chosen):
     
         # choose
+
         noun_Chosen = lo_Verbs[random.randint(0, lenOf_LO_Verbs - 1)]
         
         # append
@@ -251,6 +256,7 @@ def test_1():
     #/for i in range(0, numOf_Verbs_Chosen):
 
     '''###################
+
         step : 2.3
             choose : expression
     ###################'''
@@ -259,12 +265,14 @@ def test_1():
     for i in range(0, numOf_Expressions_Chosen):
     
         # choose
+
         noun_Chosen = lo_Expressions[random.randint(0, lenOf_LO_Expressions - 1)]
         
         # append
         lo_Expressions_Chosen.append(noun_Chosen)
         
     #/for i in range(0, numOf_Expressions_Chosen):
+
 
 #     #debug
 #     print()
@@ -289,6 +297,7 @@ def test_1():
     
     strOf_Results = " / ".join([strOf_Nouns, strOf_Verbs, strOf_Expressions])
     
+
 #     #debug
 #     print()
 #     print("[%s:%d] strOf_Results ==>" % \
@@ -309,11 +318,13 @@ def test_1():
     ###################'''
     strOf_Cmd = "echo %s | clip" % (strOf_Results)
 
+
     # calll system
     os.system(strOf_Cmd)
 
     #debug
     print()
+
     print("[%s:%d] gen word set ==> done" % \
                     (os.path.basename(libs.thisfile()), libs.linenum()
                      
@@ -359,6 +370,7 @@ def test_1():
     '''###################
         message
     ###################'''
+
 #     print()
 #     print("[%s:%d] test_1 =======================" % \
 #                     (os.path.basename(libs.thisfile()), libs.linenum()
@@ -373,6 +385,7 @@ def exec_prog():
     ###################'''
     test_1()
     
+
 #     print("[%s:%d] exec_prog() => done" % \
 #             (os.path.basename(libs.thisfile()), libs.linenum()
 #             
@@ -394,6 +407,7 @@ if __name__ == "__main__" :
     	evecute		
     ###################'''
     exec_prog()
+
 
 #     print()
 #     
