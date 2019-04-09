@@ -216,11 +216,25 @@ def test_1():
     ###################'''
     lo_Nouns_Chosen = []
     
+    flg_Unique = False
+    
     for i in range(0, numOf_Nouns_Chosen):
     
         # choose
-
-        noun_Chosen = lo_Nouns[random.randint(0, lenOf_LO_Nouns - 1)]
+#         while not flg_Unique :
+        while True :
+            
+            noun_Chosen = lo_Nouns[random.randint(0, lenOf_LO_Nouns - 1)]
+            
+            #ref https://stackoverflow.com/questions/7936125/python-find-out-if-an-element-in-a-list-has-a-specific-string
+            if not noun_Chosen in lo_Nouns_Chosen : #if not noun_Chosen in lo_Nouns_Chosen
+                
+                break
+            
+            #/if not noun_Chosen in lo_Nouns_Chosen
+            
+        #/while not flg_Unique :
+#         noun_Chosen = lo_Nouns[random.randint(0, lenOf_LO_Nouns - 1)]
 #         noun_Chosen = lo_Nouns[random.randint(0, lenOf_LO_Nouns)]
         
         # append
@@ -228,15 +242,6 @@ def test_1():
         
     #/for i in range(0, numOf_Nouns_Chosen):
 
-
-#     #debug
-#     print()
-#     print("[%s:%d] lo_Nouns_Chosen ==>" % \
-#                     (os.path.basename(libs.thisfile()), libs.linenum()
-# 
-#                     ), file=sys.stderr)
-#     print(lo_Nouns_Chosen)
-#     print()
 
     '''###################
         step : 2.2
@@ -247,11 +252,19 @@ def test_1():
     for i in range(0, numOf_Verbs_Chosen):
     
         # choose
+        while True:
+            
+            verb_Chosen = lo_Verbs[random.randint(0, lenOf_LO_Verbs - 1)]
+            
+            if not verb_Chosen in lo_Verbs_Chosen : #if not nou_
+                
+                break
+            
+            #/if not nou_
 
-        noun_Chosen = lo_Verbs[random.randint(0, lenOf_LO_Verbs - 1)]
         
         # append
-        lo_Verbs_Chosen.append(noun_Chosen)
+        lo_Verbs_Chosen.append(verb_Chosen)
         
     #/for i in range(0, numOf_Verbs_Chosen):
 
@@ -265,11 +278,21 @@ def test_1():
     for i in range(0, numOf_Expressions_Chosen):
     
         # choose
-
-        noun_Chosen = lo_Expressions[random.randint(0, lenOf_LO_Expressions - 1)]
+        while True :
+            
+            expression_Chosen = lo_Expressions[random.randint(0, lenOf_LO_Expressions - 1)]
+            
+            if not expression_Chosen in lo_Expressions_Chosen : #if not expression_Chosen in lo_Expressions_Chosen
+                
+                break
+            
+            #/if not expression_Chosen in lo_Expressions_Chosen
+            
+        #/while True
+#         expression_Chosen = lo_Expressions[random.randint(0, lenOf_LO_Expressions - 1)]
         
         # append
-        lo_Expressions_Chosen.append(noun_Chosen)
+        lo_Expressions_Chosen.append(expression_Chosen)
         
     #/for i in range(0, numOf_Expressions_Chosen):
 
@@ -332,39 +355,6 @@ def test_1():
     print(strOf_Results)
     print()
 
-
-#     #debug
-#     print()
-#     print("[%s:%d] os.system() ==> done '%s'" % \
-#                     (os.path.basename(libs.thisfile()), libs.linenum()
-#                      , strOf_Cmd
-#                     ), file=sys.stderr)
-#     print(strOf_Results)
-#     print()
-    
-#     #debug
-#     print()
-#     print("[%s:%d] subprocess called... ==> '%s'" % \
-#                     (os.path.basename(libs.thisfile()), libs.linenum()
-#                      , strOf_Cmd
-#                     ), file=sys.stderr)
-#     print(strOf_Results)
-#     print()
-    
-#     subprocess.call(["echo 'yes'", ""]) #=> FileNotFoundError: [WinError 2] 指定されたファイルが見つかりません。
-#     subprocess.call(["echo 'yes'"]) #=> FileNotFoundError: [WinError 2] 指定されたファイルが見つかりません。
-#     subprocess.call(["echo 'yes'"])
-#     subprocess.call([strOf_Cmd])
-    
-#     #debug
-#     print()
-#     print("[%s:%d] subprocess done ==> '%s'" % \
-#                     (os.path.basename(libs.thisfile()), libs.linenum()
-#                      , strOf_Cmd
-#                     ), file=sys.stderr)
-#     print(strOf_Results)
-#     print()
-    
 #_20190409_105137:wl:in-func        
 
     '''###################
