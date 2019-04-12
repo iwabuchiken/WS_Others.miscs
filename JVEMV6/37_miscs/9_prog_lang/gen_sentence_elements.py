@@ -30,6 +30,31 @@ from mm.libs_mm import cons_mm, cons_fx, libs, libfx
 import os, math, random, subprocess
 
 ###############################################
+#
+#	VARS (GLOBAL)
+#
+###############################################
+numOf_Nouns_Chosen = 8
+numOf_Verbs_Chosen = 5
+numOf_Expressions_Chosen = 5
+
+numOf_Adverbs_Chosen = 5
+numOf_Ajectives_Chosen = 5
+
+charOf_Join_For_Words = ";"
+#charOf_Join_For_Categories = " / "
+charOf_Join_For_Categories__Display = "\n"
+charOf_Join_For_Categories__Clip = " / "
+
+
+
+###############################################
+#
+#	FUNCS
+#
+###############################################
+
+###############################################
 '''
     @param string_type
             serial    "20160604_193404"
@@ -103,12 +128,12 @@ def test_2__Korean():
             prep : vars
     ###################'''
 
-    numOf_Nouns_Chosen = 4
-    numOf_Verbs_Chosen = 4
-    numOf_Expressions_Chosen = 4
-    
-    numOf_Adverbs_Chosen = 4
-    numOf_Ajectives_Chosen = 4
+#    numOf_Nouns_Chosen = 4
+#    numOf_Verbs_Chosen = 4
+#    numOf_Expressions_Chosen = 4
+#    
+#    numOf_Adverbs_Chosen = 4
+#    numOf_Ajectives_Chosen = 4
     
     '''###################
         step : 1
@@ -399,8 +424,8 @@ def test_2__Korean():
         step : 3.1
             build : lines
     ###################'''
-    charOf_Join_For_Words = ";"
-    charOf_Join_For_Categories = " / "
+#    charOf_Join_For_Words = ";"
+#    charOf_Join_For_Categories = " / "
     
     strOf_Nouns = charOf_Join_For_Words.join(lo_Nouns_Chosen)
     strOf_Verbs = charOf_Join_For_Words.join(lo_Verbs_Chosen)
@@ -411,27 +436,31 @@ def test_2__Korean():
     
 #     strOf_Results = " / ".join(\
 #     strOf_Results = "\n".join(\
-    strOf_Results = charOf_Join_For_Categories.join(\
-            [
+
+    #strOf_Results = charOf_Join_For_Categories.join(\
+
+    lo_Categories =             [ \
                 strOf_Nouns
                 , strOf_Verbs
                 , strOf_Expressions
                 , strOf_Adverbs
                 , strOf_Ajectives
             ]
+
+    lo_Categories = ["* " + x for x in lo_Categories]
+
+    strOf_Results = charOf_Join_For_Categories__Display.join(\
+    
+            lo_Categories
+#            [
+#                strOf_Nouns
+#                , strOf_Verbs
+#                , strOf_Expressions
+#                , strOf_Adverbs
+#                , strOf_Ajectives
+#            ]
     )
 #     strOf_Results = " / ".join([strOf_Nouns, strOf_Verbs, strOf_Expressions])
-    
-
-    '''###################
-        step : 4
-            results --> clip
-    ###################'''
-    strOf_Cmd = "echo %s | clip" % (strOf_Results)
-
-
-    # calll system
-    os.system(strOf_Cmd)
 
     #debug
     print()
@@ -444,6 +473,27 @@ def test_2__Korean():
                     ), file=sys.stderr)
     print(strOf_Results)
     print()
+
+
+    '''###################
+        step : 4
+            results --> clip
+    ###################'''
+    
+    #lo_Categories = ["*" + x for x in lo_Categories]
+    
+    strOf_Results = charOf_Join_For_Categories__Clip.join(\
+        
+        lo_Categories
+        
+    )
+
+    strOf_Cmd = "echo %s | clip" % (strOf_Results)
+
+
+    # calll system
+    os.system(strOf_Cmd)
+
 
 #_20190409_105137:wl:in-func        
 
