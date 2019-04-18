@@ -22,7 +22,8 @@ sys.path.append('..')
 sys.path.append('C:/WORKS_2/WS/WS_Others/prog/D-7/2_2/VIRTUAL/Admin_Projects')
 # sys.path.append('C:/WORKS_2/WS/WS_Others/prog/D-7/2_2/VIRTUAL/Admin_Projects/mm')
 
-from mm.libs_mm import cons_mm, cons_fx, libs, libfx
+from mm.libs_mm import libs
+# from mm.libs_mm import cons_mm, cons_fx, libs, libfx
 
 '''###################
     import : built-in modules        
@@ -37,6 +38,8 @@ import os, math, random, subprocess
 numOf_Nouns_Chosen = 8
 numOf_Verbs_Chosen = 5
 numOf_Expressions_Chosen = 5
+
+numOf_Topics_Chosen = 3
 
 numOf_Adverbs_Chosen = 5
 numOf_Ajectives_Chosen = 5
@@ -149,6 +152,8 @@ def test_2__Korean():
     fname_Data_Verbs = "data_verbs.dat"
     fname_Data_Expressions = "data_expressions.dat"
     
+    fname_Data_Topics = "data_topics.dat"
+    
     fname_Data_Adverbs = "data_adverbs.dat"
     fname_Data_Ajectives = "data_ajectives.dat"
     
@@ -156,6 +161,7 @@ def test_2__Korean():
     fpath_Data_Nouns = os.path.join(dpath_Data_Files, fname_Data_Nouns)
     fpath_Data_Verbs = os.path.join(dpath_Data_Files, fname_Data_Verbs)
     fpath_Data_Expressions = os.path.join(dpath_Data_Files, fname_Data_Expressions)
+    fpath_Data_Topics = os.path.join(dpath_Data_Files, fname_Data_Topics)
     
     fpath_Data_Adverbs = os.path.join(dpath_Data_Files, fname_Data_Adverbs)
     fpath_Data_Ajectives = os.path.join(dpath_Data_Files, fname_Data_Ajectives)
@@ -198,6 +204,17 @@ def test_2__Korean():
         
         return
 
+    # topics
+    if not os.path.isfile(fpath_Data_Topics) : #if not os.path.isfile(fpath_Data_Topics)
+        
+        print()
+        print("[%s:%d] file ==> NOT exist : '%s'" % \
+                        (os.path.basename(libs.thisfile()), libs.linenum()
+                         , fpath_Data_Topics
+                        ), file=sys.stderr)
+        
+        return
+
     # adverbs
     if not os.path.isfile(fpath_Data_Adverbs) : #if not os.path.isfile(fpath_Data_Adverbs)
         
@@ -220,6 +237,7 @@ def test_2__Korean():
         
         return
 
+
     '''###################
         step : 1.2
             file : read
@@ -228,6 +246,7 @@ def test_2__Korean():
     fin_Nouns = open(fpath_Data_Nouns, "r")
     fin_Verbs = open(fpath_Data_Verbs, "r")
     fin_Expressions = open(fpath_Data_Expressions, "r")
+    fin_Topics = open(fpath_Data_Topics, "r")
     
     fin_Adverbs = open(fpath_Data_Adverbs, "r")
     fin_Ajectives = open(fpath_Data_Ajectives, "r")
@@ -236,6 +255,7 @@ def test_2__Korean():
     lo_Nouns = fin_Nouns.readlines()
     lo_Verbs = fin_Verbs.readlines()
     lo_Expressions = fin_Expressions.readlines()
+    lo_Topics = fin_Topics.readlines()
     
     lo_Adverbs = fin_Adverbs.readlines()
     lo_Ajectives = fin_Ajectives.readlines()
@@ -245,6 +265,7 @@ def test_2__Korean():
     lo_Nouns = [x.strip() for x in lo_Nouns[:-1]]
     lo_Verbs = [x.strip() for x in lo_Verbs[:-1]]
     lo_Expressions = [x.strip() for x in lo_Expressions[:-1]]
+    lo_Topics = [x.strip() for x in lo_Topics[:-1]]
 #     lo_Nouns = [x.strip() for x in lo_Nouns]
 #     lo_Verbs = [x.strip() for x in lo_Verbs]
     lo_Adverbs = [x.strip() for x in lo_Adverbs[:-1]]
@@ -254,6 +275,7 @@ def test_2__Korean():
     lenOf_LO_Nouns = len(lo_Nouns)
     lenOf_LO_Verbs = len(lo_Verbs)
     lenOf_LO_Expressions = len(lo_Expressions)
+    lenOf_LO_Topics = len(lo_Topics)
     
     lenOf_LO_Adverbs = len(lo_Adverbs)
     lenOf_LO_Ajectives = len(lo_Ajectives)
@@ -265,11 +287,12 @@ def test_2__Korean():
     fin_Nouns.close()
     fin_Verbs.close()
     fin_Expressions.close()
+    fin_Topics.close()
     
     fin_Adverbs.close()
     fin_Ajectives.close()
     
-    #_20190411_091351:wl:in-func
+    
 
     '''######################################
         step : 2
@@ -417,6 +440,42 @@ def test_2__Korean():
     #/for i in range(0, numOf_Ajectives_Chosen):
 
     '''###################
+        step : 2.6
+            choose : topics
+    ###################'''
+    lo_Topics_Chosen = []
+    
+    for i in range(0, numOf_Topics_Chosen):
+    
+        # choose
+        while True :
+            
+            expression_Chosen = lo_Topics[random.randint(0, lenOf_LO_Topics - 1)]
+            
+            if not expression_Chosen in lo_Topics_Chosen : #if not expression_Chosen in lo_Topics_Chosen
+                
+                break
+            
+            #/if not expression_Chosen in lo_Topics_Chosen
+            
+        #/while True
+        
+        # append
+        lo_Topics_Chosen.append(expression_Chosen)
+        
+    #/for i in range(0, numOf_Topics_Chosen):
+
+#     #debug
+#     print()
+#     print("[%s:%d] lo_Topics_Chosen ==>" % \
+#                     (os.path.basename(libs.thisfile()), libs.linenum()
+#                      
+#                     ), file=sys.stderr)
+#     print(lo_Topics_Chosen)
+#     print()
+
+
+    '''###################
         step : 3
             show : lines
     ###################'''
@@ -431,6 +490,8 @@ def test_2__Korean():
     strOf_Verbs = charOf_Join_For_Words.join(lo_Verbs_Chosen)
     strOf_Expressions = charOf_Join_For_Words.join(lo_Expressions_Chosen)
     
+    strOf_Topics = charOf_Join_For_Words.join(lo_Topics_Chosen)
+
     strOf_Adverbs = charOf_Join_For_Words.join(lo_Adverbs_Chosen)
     strOf_Ajectives = charOf_Join_For_Words.join(lo_Ajectives_Chosen)
     
@@ -445,6 +506,7 @@ def test_2__Korean():
                 , strOf_Expressions
                 , strOf_Adverbs
                 , strOf_Ajectives
+                , strOf_Topics
             ]
 
     lo_Categories = ["* " + x for x in lo_Categories]
@@ -474,6 +536,7 @@ def test_2__Korean():
     print(strOf_Results)
     print()
 
+#_20190411_091351:wl:in-func
 
     '''###################
         step : 4
