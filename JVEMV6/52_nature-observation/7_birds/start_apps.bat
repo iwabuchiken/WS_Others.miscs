@@ -31,4 +31,10 @@ start chrome.exe https://www.szynalski.com/tone-generator/
 start chrome.exe "https://docs.google.com/spreadsheets/d/1xkLnhw32NHCxJzZoJHfNfcSK1HwXroyl36teBeF8Xvc/edit#gid=0"
 start chrome.exe "https://docs.google.com/document/d/1MLUozn3rnBjorTs1sOlyAOR_GBwf7BPxz4lYr1e-JfI/edit"
 
+REM *************************************
+REM 	itunes
+REM *************************************
+pushd C:\WORKS_2\Programs\itunes_12.6.2
+start iTunes.exe
+
 REM exit
