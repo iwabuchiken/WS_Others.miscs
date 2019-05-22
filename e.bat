@@ -1,1 +1,1 @@
-g pull https://github.com/iwabuchiken/WS_Others.JVEMV6.git
+g pull https://github.com/iwabuchiken/WS_Others.miscs.git
