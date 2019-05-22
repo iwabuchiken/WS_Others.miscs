@@ -1,0 +1,8 @@
+num of plans	7
+1) : kb : 1 : play :  : 9/17 : d
+2) : bk : 1 : 導引養生功 :  : 9/17 : d
+3) : bk : 2 : 日本のソブリンリスク :  : 9/17 : d
+4) : bk : 3 : relativity-3 :  : 9/17 : d1
+5) : kb : 2 : admin : listing : 9/17 : d2
+6) : kb : 3 : admin : musescore write-out : 9/17 : d3
+7) : currency : 1 : python :  : 9/17 : d4
