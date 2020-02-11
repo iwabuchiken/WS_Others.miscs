@@ -12,7 +12,7 @@ REM =================================
 REM 	log file
 REM 	2020/01/17 15:40:31
 REM =================================
-pushd C:\WORKS_2\WS\WS_Others.miscs\misc_files
+pushd C:\WORKS_2\WS\WS_Others.miscs\misc_files\towa-related
 start diary_towa_2020.odt
 
 
