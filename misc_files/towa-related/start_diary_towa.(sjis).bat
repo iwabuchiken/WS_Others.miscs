@@ -30,12 +30,14 @@ set url_3=http://benfranklin.chips.jp/cake_apps/Cake_IFM11/images/view/40124
 
 set url_4=http://benfranklin.chips.jp/cake_apps/Cake_IFM11/images/view/39970
 
+set url_5="https://mail.google.com/mail/ca/u/0/#search/diary+towa?compose=jrjtXFBVVNZLVRnTMtvQHtvHNkmwMrDwznhgwmRJBRCWzJCjjsnhwJdfwrdlXzhNdTLvLHJJ"
+
 REM set url_1="http%3A%2F%2Fbenfranklin.chips.jp%2Fcake_apps%2FCake_IFM11%2Fimages%2Findex_2%3Ffilter_memo%3D%E6%9D%B1%E5%92%8C%2B%E6%97%A5%E8%AA%8C%26RBs_AND_OR_Memo%3DAND%26sort%3Dfile_name%26direction%3Ddesc"
 
 pushd C:\WORKS_2\Programs\opera
 REM launcher.exe http://localhost/Eclipse_Luna/Cake_IFM11/ifm
 REM launcher.exe %url_1%
-launcher.exe %url_1% %url_2% %url_3% %url_4%
+launcher.exe %url_1% %url_2% %url_3% %url_4% %url_5%
 
 REM launcher.exe "http://benfranklin.chips.jp/cake_apps/Cake_IFM11/images/index_2?filter_memo=ìåòa+ì˙éè&RBs_AND_OR_Memo=AND&sort=file_name&direction=desc"
 
