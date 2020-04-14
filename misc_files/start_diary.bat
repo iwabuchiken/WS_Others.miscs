@@ -9,5 +9,10 @@ REM ******************************
 pushd C:\WORKS_2\Programs\opera
 start launcher "https://mail.google.com/mail/ca/u/0/#label/INBOX%2Fmyself"
 
+REM ******************************
+REM 	browser
+REM 	at : 2020/04/15 07:17:24
+REM ******************************
+C:\WORKS_2\t.bat
 
 pause
