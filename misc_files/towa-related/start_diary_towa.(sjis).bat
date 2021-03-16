@@ -47,4 +47,4 @@ REM launcher.exe "http://benfranklin.chips.jp/cake_apps/Cake_IFM11/images/index_
 
 :end_of_end
 
-pause
+rem pause
